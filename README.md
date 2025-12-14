@@ -25,3 +25,54 @@ Projenin C++ kaynak kodları aynı dizinde bulunduktan sonra, Linux terminalinde
 
 ```bash
 g++ main.cpp Encryptor.cpp -o xor_tool
+
+```
+Bu komut, xor_tool adında bir çalıştırılabilir dosya oluşturacaktır.
+
+💻 Kullanım Kılavuzu
+
+Projenin derlenmesiyle oluşturulan xor_tool yürütülebilir dosyası, şifrelemek veya deşifrelemek istediğiniz dosya ile aynı dizinde çalıştırılmalıdır.
+Adım 1: Programı Çalıştırma
+
+Terminalinizde ./xor_tool komutunu girin:
+```Bash
+
+./xor_tool
+
+```
+
+Adım 2: Etkileşimli Girdiler
+
+Program çalıştırıldığında sizden iki temel girdi ister:
+   ``` 
+    İşlem Yapılacak Dosyanın Adı
+    
+    Anahtar
+```
+   
+🔐 Şifreleme (Encryption)
+
+Dosyayı şifrelemek için programı çalıştırın ve bir anahtar girin. Dosyanın içeriği XORlanarak şifrelenir ve aynı dosyanın üzerine yazılır.
+```
+./xor_tool
+
+Islem yapilacak dosyanin adini girin: gizli_belge.txt
+Sifreleme / Desifreleme anahtarini girin: 1234
+Islem baslatiliyor...
+Islem basariyla tamamlandi. Dosya guncellendi: gizli_belge.txt
+```
+🔓 Deşifreleme (Decryption)
+
+Şifrelenmiş dosyayı orijinal haline döndürmek için programı tekrar çalıştırın ve KESİNLİKLE AYNI ANAHTARI girin.
+```
+./xor_tool
+
+Islem yapilacak dosyanin adini girin: gizli_belge.txt
+Sifreleme / Desifreleme anahtarini girin: 1234  <-- Anahtar aynı olmalı!
+Islem baslatiliyor...
+Islem basariyla tamamlandi. Dosya guncellendi: gizli_belge.txt
+```
+
+Önemli: Yanlış anahtar girilmesi durumunda dosya içeriği bozulacak ve orijinal haline geri döndürülemeyecektir. Bundan dolayı yanlış şifre girmediğinizden emin olun.
+
+Bu araç eğitim amaçlı bir uygulamadır ve XOR algoritmasının basitliği nedeniyle yüksek güvenlik gerektiren uygulamalar için kullanılmamalıdır. XOR şifreleme, anahtarın dosya boyutu kadar uzun ve rastgele olmadığı sürece (One-Time Pad), modern kriptanaliz yöntemlerine karşı savunmasızdır.
